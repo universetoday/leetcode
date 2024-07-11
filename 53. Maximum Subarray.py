@@ -7,6 +7,9 @@ with the largest sum, and return its sum.
 
 class Solution(object):
     def maxSubArray(self, nums: list[int]) -> int:
+        """
+        Для решения этой задачи можно использовать алгоритм Кадане (Kadane's Algorithm).
+        """
         # 1. Устанавливаем max_current и max_global равными первому элементу массива nums
         max_current = nums[0]
         max_global = nums[0]
@@ -23,7 +26,7 @@ class Solution(object):
         return max_global
 
 
-nums = [-2,1,-3,4,-1,2,1,-5,4]
+nums = [-2, 1, -3, 4, -1, 2, 1, -5, 4]
 sol = Solution()
 res = sol.maxSubArray(nums)
 print(res)
@@ -35,7 +38,7 @@ res = sol.maxSubArray(nums)
 print(res)
 assert res == 1
 
-nums = [5,4,-1,7,8]
+nums = [5, 4, -1, 7, 8]
 sol = Solution()
 res = sol.maxSubArray(nums)
 print(res)
