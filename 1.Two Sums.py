@@ -9,8 +9,6 @@ class Solution:
             # 3. Вычисление дополнительного числа target - num
             complement = target - num
             # 4. Проверка наличия дополнительного числа complement в словаре
-            print(complement)
-            print(num_to_index)
             if complement in num_to_index:
                 # Если в словаре, то возвращается индекс текущего числа и дополнения
                 return [num_to_index[complement], i]
