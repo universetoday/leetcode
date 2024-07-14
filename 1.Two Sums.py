@@ -6,6 +6,7 @@ and you may not use the same element twice.
 You can return the answer in any order.
 """
 
+
 class Solution:
     def twoSum(self, nums: list[int], target: int) -> list[int]:
         # 1. инициализируем пустой словарь
