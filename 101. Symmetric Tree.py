@@ -23,7 +23,40 @@ class TreeNode:
 
 class Solution:
     def isSymmetric(self, root: Optional[TreeNode]) -> bool:
-        pass
+        # Создаем рекурсивную функцию проверки симметрии на каждом уровне
+        def is_mirror(left, right):
+            # если дерево закончилось
+            if not left and not right:
+                return True
+            # если какие-то ветви дерева остались
+            if not left or not right:
+                return False
+            # Возвращаем проверку значений текущего и следующего уровня слева и справа рекурсивно
+            return (left.val == right.val) and is_mirror(left.left, right.right) and is_mirror(left.right, right.left)
+
+        return is_mirror(root, root)
+
+
+root = TreeNode(1)
+root.left = TreeNode(2)
+root.right = TreeNode(2)
+root.left.left = TreeNode(3)
+root.left.right = TreeNode(4)
+root.right.left = TreeNode(4)
+root.right.right = TreeNode(3)
+
+print(Solution().isSymmetric(root))
+
+root = TreeNode(1)
+root.left = TreeNode(2)
+root.right = TreeNode(2)
+root.left.left = TreeNode(3)
+root.left.right = TreeNode(4)
+root.right.left = TreeNode(4)
+root.right.right = TreeNode(5)
+
+print(Solution().isSymmetric(root))
+
 
 
 
