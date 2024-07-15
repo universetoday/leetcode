@@ -14,6 +14,8 @@ class Solution:
         Do not return anything, modify nums in-place instead.
         """
         n = len(nums)
+        # Изменяем k, если оно больше длины списка
+        k = k % n
         # Функция переворачивания массива с позиции start до позиции end
         def reverse(nums, start, end):
             while start < end:
@@ -25,7 +27,7 @@ class Solution:
                 end -= 1
 
         # Перевернем весь массив
-        reverse(nums, 0, n - 1 )
+        reverse(nums, 0, n - 1)
         # Перевернем обратно первые k элементов
         reverse(nums, 0, k - 1)
         # Перевернем оставшиеся элементы
