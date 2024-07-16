@@ -25,7 +25,28 @@ MEDIUM
 
 class Solution:
     def search(self, nums: list[int], target: int) -> int:
-        return
+        # Используем модифицированный бинарный поиск
+        left = 0
+        right = len(nums) - 1
+
+        while left <= right:
+            mid = (left + right) // 2
+            # Если нашли target, возвращаем его индекс
+            if nums[mid] == target:
+                return mid
+            # какая половина массива отсортирована
+            if nums[left] <= nums[mid]:
+                if nums[left] <= target < nums[mid]:
+                    right = mid - 1
+                else:
+                    left = mid + 1
+            else:
+                if nums[mid] < target <= nums[right]:
+                    left = mid + 1
+                else:
+                    right = mid - 1
+        # Если не нашли target
+        return -1
 
 
 nums = [4, 5, 6, 7, 0, 1, 2]

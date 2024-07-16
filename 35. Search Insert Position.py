@@ -26,8 +26,8 @@ class Solution:
             elif nums[mid] < target:
                 left = mid + 1
             else:
-                right = mid
-        return left # + 1 : иногда бывает ошибка по непонятной причине
+                right = mid - 1
+        return left + 1
 
 
 nums = [1,3,5,6]
