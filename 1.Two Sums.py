@@ -28,7 +28,6 @@ class Solution:
 
 nums = [2, 7, 11, 15]
 target = 9
-sol = Solution()
-res = sol.twoSum(nums, target)
+res = Solution().twoSum(nums, target)
 print(res)
 assert res == [0, 1]

@@ -34,7 +34,7 @@ class Solution:
             # Возвращаем проверку значений текущего и следующего уровня слева и справа рекурсивно
             return (left.val == right.val) and is_mirror(left.left, right.right) and is_mirror(left.right, right.left)
 
-        return is_mirror(root, root)
+        return is_mirror(root.left, root.right)
 
 
 root = TreeNode(1)
