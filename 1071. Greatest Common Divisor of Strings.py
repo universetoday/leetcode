@@ -8,6 +8,7 @@ Given two strings str1 and str2, return the largest string x such that x divides
 EASY
 """
 
+
 class Solution:
     def gcdOfStrings(self, str1: str, str2: str) -> str:
         # Helper function to check if s1 is divisible by s2
