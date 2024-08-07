@@ -12,7 +12,7 @@ the no-adjacent-flowers rule and false otherwise.
 верните True, если n новых цветов может быть посажено на этом подносе без нарушения правила соседних горшков,
 и False в обратном случае.
 ---------------------------------------
-HARD
+EASY
 """
 from typing import List
 
@@ -34,7 +34,6 @@ class Solution:
                         return True
 
         return count >= n
-
 
 
 flowerbed = [1,0,0,0,1]
