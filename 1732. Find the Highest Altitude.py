@@ -5,7 +5,11 @@ The biker starts his trip on point 0 with altitude equal 0.
 You are given an integer array gain of length n where gain[i] is the net gain in altitude
 between points i and i + 1 for all (0 <= i < n). Return the highest altitude of a point.
 ------------------------
+Есть байкер, который отправляется в дорожное путешествие. Поездка состоит из n + 1 точек на разных высотах.
+Байкер начинает свое путешествие в точке 0 с высотой, равной 0.
 
+Вам дан целочисленный массив gain длины n, где gain[i] - чистое приращение высоты
+между точками i и i + 1 для всех (0 <= i < n). Верните наивысшую высоту точки.
 ------------------------
 EASY
 """
