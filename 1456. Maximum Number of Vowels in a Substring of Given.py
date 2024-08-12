@@ -12,14 +12,22 @@ MEDIUM
 
 class Solution:
     def maxVowels(self, s: str, k: int) -> int:
-        isWovel = lambda x: x in 'aeiou'
-        sum_vowels = sum(map(isWovel, s[:k]))
-        max_v = 0
+        isVowel = lambda x: x in 'aeiou'
+        sum_vowels = sum(map(isVowel, s[:k]))
+        max_v = sum_vowels
         for i in range(len(s) - k):
-            substr = s[i:i+k]
-            sum_vowels += isWovel(s[i+k]) - isWovel(s[i])
+            sum_vowels += isVowel(s[i+k]) - isVowel(s[i])
             max_v = max(max_v, sum_vowels)
         return max_v
+
+"""
+Объяснение:
+
+    isVowel: Лямбда-функция, которая возвращает True, если символ является гласной.
+    sum_vowels: Подсчет количества гласных в первом окне длиной k.
+    max_v: Инициализируется текущим количеством гласных (sum_vowels), найденным в первом окне.
+    Цикл: Перемещение окна с подсчетом гласных и обновлением max_v.
+"""
 
 
 s = "abciiidef"
@@ -43,3 +51,9 @@ res = sol.maxVowels(s, k)
 print(res)
 assert res == 2
 
+s = "ibpbhixfiouhdljnjfflpapptrxgcomvnb"
+k = 33
+sol = Solution()
+res = sol.maxVowels(s, k)
+print(res)
+assert res == 7
